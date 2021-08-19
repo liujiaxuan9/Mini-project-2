@@ -29,6 +29,7 @@ plot(s);
 s = awgn(s,10,'measured');
 figure(2)
 periodogram(s,[],length(s),fs);
+
 %%%% COHERENT DEMODULATION %%%%
 ss1=[];
 ss2=[];

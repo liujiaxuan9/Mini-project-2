@@ -1,16 +1,17 @@
 function output=MZMqammod(data,N)
 N = N.^0.5;
 E_0 = 1;
-for i = 0:N-1
-    I(i+1)= i/(N-1);
-end
-I = sort(I,'descend');
+% for i = 0:N-1
+%     I(i+1)= i/(N-1);
+% end
+% I = sort(I,'descend');
+I = linspace(0,1,N);
 Phi_ideal = acos(2.*I-1);
-Phi_difference(1)=Phi_ideal(1);
-for i=2:N
-    Phi_difference(i)= Phi_ideal(i)-Phi_ideal(i-1);
-end
-
+% Phi_difference(1)=Phi_ideal(1);
+% for i=2:N
+%     Phi_difference(i)= Phi_ideal(i)-Phi_ideal(i-1);
+% end
+Phi_difference= Phi_ideal(2:end)-Phi_ideal(1:end-1);
 
 U_pi = 3.9;
 %p1=1.8;
